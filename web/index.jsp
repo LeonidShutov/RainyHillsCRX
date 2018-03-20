@@ -1,17 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: shiz
-  Date: 19.03.2018
-  Time: 11:39
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>Simple Jersey</title>
+    <title>Rainy Hills</title>
 </head>
 <body>
-<p><a href="rest/myresource">Jersey resource</a>
+Please provide POST request with JSON array "numbers" to /rest/calculateVolume
 </body>
-</html>
 </html>

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FillWaterServiceTest {
-    FillWaterService service;
+    private FillWaterService service;
     //TODO check arithmetic exceptions
     //TODO check on edges of hills
 

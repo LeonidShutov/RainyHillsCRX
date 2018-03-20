@@ -39,8 +39,14 @@ public class MainController {
     public Response calcVolume(String json) {
         logger.debug("Received input: " + json);
 
-        JSONObject obj = new JSONObject(json);
-        JSONArray array = obj.optJSONArray("numbers");
+        JSONArray array;
+        try {
+            JSONObject obj = new JSONObject(json);
+            array = obj.optJSONArray("numbers");
+        } catch (JSONException e) {
+            logger.error("Cannot parse JSON", e);
+            return Response.serverError().entity("Incorrect JSON received. Please provide valid JSON").build();
+        }
 
         if (array == null) {
             logger.error("Null array received");
@@ -62,7 +68,7 @@ public class MainController {
         }
         FillWaterService service = new FillWaterServiceImpl();
         final int volume = service.fillWater(numbers);
-
+        logger.debug("Answer calculated. Result is: " + volume);
         return Response.ok(String.valueOf(volume), MediaType.APPLICATION_JSON).build();
     }
 }
