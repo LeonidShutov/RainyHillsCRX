@@ -23,7 +23,7 @@ class FillWaterServiceTest {
     }
 
     @Test
-    void fillWaterWithOnePitTest() {
+    void fillWaterWithOneHoleTest() {
         int[] array = {2, 0, 2};
         int volume = service.fillWater(array);
         assertEquals(2, volume);
@@ -31,7 +31,7 @@ class FillWaterServiceTest {
 
 
     @Test
-    void fillWaterWithOneLongerPitTest() {
+    void fillWaterWithOneLongerHoleTest() {
         int[] array = {2, 0,1,0, 2};
         int volume = service.fillWater(array);
         assertEquals(5, volume);
@@ -39,7 +39,7 @@ class FillWaterServiceTest {
 
 
     @Test
-    void fillWaterWithTwoPitsTest() {
+    void fillWaterWithTwoHolesTest() {
         int[] array = {2, 0,3,1, 5};
         int volume = service.fillWater(array);
         assertEquals(4, volume);

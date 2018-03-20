@@ -9,7 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("calculateVolume")
-public class MyResource {
+public class MainController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
