@@ -16,10 +16,22 @@ public class MainController {
     private static Logger logger = Logger.getLogger(MainController.class);
 
     /**
-     * TODO write javadoc
+     * main controller method.
+     * receives an array "numbers" in JSON, parse it, calls service for calculating volume, provides answer
      *
-     * @param json
-     * @return
+     * @param json - input array.
+     *             examples of correct input:
+     *             {"numbers":[9999999,0,2]}
+     *             {"numbers":[1,0]}
+     *             <p>
+     *             examples of incorrect input:
+     *             {"numbers":["asd",0,2]} - not integer value in 0 position
+     *             {"numbers":[9999999999999,0,2]} - not integer value in 0 position
+     *             {"numbers":[5]} - array should contain at least 2 values
+     *             {"numbers":""} - this isn't an array
+     *             {"NOT_NUMBERS":[9999999,0,2]}  - array "numbers" isn't provided
+     * @return HTTP code 200 and calculated volume, remained after water in case of correct input,
+     * HTTP code 500 and reason, in case of incorrect input
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

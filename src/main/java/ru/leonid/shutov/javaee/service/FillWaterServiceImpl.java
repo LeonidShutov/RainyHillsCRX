@@ -5,7 +5,7 @@ public class FillWaterServiceImpl implements FillWaterService {
     /**
      * Calculates volume of water, remained after the rain, in units.
      *
-     * @param array - describes profile of hills
+     * @param array - describes profile of hills (landscape)
      * @return volume of water, remained after the rain, in units
      * <p>
      * Time Complexity: O(n)
