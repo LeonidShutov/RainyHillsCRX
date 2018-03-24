@@ -12,10 +12,10 @@ public class FillWaterServiceImpl implements FillWaterService {
      * Space Complexity: O(1)
      */
     @Override
-    public int fillWater(int[] array) {
+    public long fillWater(int[] array) {
         long volume = 0;
-        long left = 0;
-        long right = 0;
+        long left = Integer.MIN_VALUE;
+        long right = Integer.MIN_VALUE;
         int low = 0;
         int high = array.length - 1;
 
@@ -36,6 +36,6 @@ public class FillWaterServiceImpl implements FillWaterService {
                 high--;
             }
         }
-        return Math.toIntExact(volume);
+        return volume;
     }
 }

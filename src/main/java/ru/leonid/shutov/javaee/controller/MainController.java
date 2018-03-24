@@ -67,7 +67,7 @@ public class MainController {
             return Response.serverError().entity("Cannot parse array. Please provide an integers array").build();
         }
         FillWaterService service = new FillWaterServiceImpl();
-        final int volume = service.fillWater(numbers);
+        final long volume = service.fillWater(numbers);
         logger.debug("Answer calculated. Result is: " + volume);
         return Response.ok(String.valueOf(volume), MediaType.APPLICATION_JSON).build();
     }

@@ -11,5 +11,5 @@ public interface FillWaterService {
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */
-    int fillWater(int[] array);
+    long fillWater(int[] array);
 }
