@@ -13,7 +13,7 @@ OUTPUT: integer number, further called "volume"
 
 Input array describes profile of a surface.
 Example:
-input array: {3,2,4,1,2}, it describes this kind of surface (pipes describes "walls"):
+input array: {3,2,4,1,2}, it describes this kind of surface (asterisks describes "walls"):
 
 ```
     *
@@ -39,15 +39,32 @@ Another example, here we have volume == 8 units of water:
 * * * ~ * *
 4 1 1 0 2 3
 ```
-# Details of implementation and assumptions
+# Assumptions
 
 It is not stated explicitly in task, but we assume that, if we have "open boundary" in array, it could not be filled with water.
 Example:
 in this case
 ```
-*   *
+* ~ *
 * * *
 * * * *
 3 2 3 1
 ```
 result will be 1 unit of water. 
+
+# Details of implementation
+
+Interaction type application uses is not stated explicitly. I assume, that appropriate way to do it, to create REST service, user can interact with. 
+It is convenient and popular way for application to interact with external world. 
+
+# Using
+to use this application, one should send POST request to .../rest/calculateVolume endpoint with JSON array "numbers" as input
+examples of correct input:
+     {"numbers":[9999999,0,2]}
+     {"numbers":[1,0]}
+examples of incorrect input:
+     {"numbers":["asd",0,2]} - not integer value in 0 position
+     {"numbers":[9999999999999,0,2]} - not integer value in 0 position
+     {"numbers":[5]} - array should contain at least 2 values
+     {"numbers":""} - this isn't an array
+     {"NOT_NUMBERS":[9999999,0,2]}  - array "numbers" isn't provided
