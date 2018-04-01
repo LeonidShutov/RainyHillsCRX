@@ -57,14 +57,23 @@ result will be 1 unit of water.
 Interaction type application uses is not stated explicitly. I assume, that appropriate way to do it, to create REST service, user can interact with. 
 It is convenient and popular way for application to interact with external world. 
 
+# Deploy
+To deploy this application, one should first run: mvn clean install
+After that war file will be created in /target catalog
+Next, you should go to GlassFish admin panel, then go to application section and click Deploy button. In deploy menu you need to choose created war file in Location section and set Context Root (for example - RainyHills)
+
 # Using
-to use this application, one should send POST request to .../rest/calculateVolume endpoint with JSON array "numbers" as input
+To use this application, one should send POST request to ```http://{domain:port}/{ContextRoot}/rest/calculateVolume``` endpoint with JSON array "numbers" as input
 examples of correct input:
+```
      {"numbers":[9999999,0,2]}
      {"numbers":[1,0]}
+```     
 examples of incorrect input:
+```
      {"numbers":["asd",0,2]} - not integer value in 0 position
      {"numbers":[9999999999999,0,2]} - not integer value in 0 position
      {"numbers":[5]} - array should contain at least 2 values
      {"numbers":""} - this isn't an array
      {"NOT_NUMBERS":[9999999,0,2]}  - array "numbers" isn't provided
+```
