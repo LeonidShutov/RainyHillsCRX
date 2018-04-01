@@ -41,7 +41,7 @@ Another example, here we have volume == 8 units of water:
 ```
 # Assumptions
 
-It is not stated explicitly in task, but we assume that, if we have "open boundary" in array, it could not be filled with water.
+It is not stated explicitly in task, but we assume that, if we have "open boundary" in array (array has a hole directly attached to it's boundary), it could not be filled with water.
 Example:
 in this case
 ```
@@ -50,7 +50,7 @@ in this case
 * * * *
 3 2 3 1
 ```
-result will be 1 unit of water. 
+result will be 1 unit of water, because right value (1), despite being lower, than previous (3), could not withhold any water. 
 
 # Details of implementation
 
