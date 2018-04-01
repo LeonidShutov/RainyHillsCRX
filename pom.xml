@@ -7,6 +7,7 @@
     <groupId>ru.leonid.shutov.javaee</groupId>
     <artifactId>RainyHillsCRX</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <dependencyManagement>
         <dependencies>
@@ -35,6 +36,11 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -49,6 +55,14 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <webXml>web\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
         </plugins>
