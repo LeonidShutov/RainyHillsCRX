@@ -52,6 +52,15 @@ in this case
 ```
 result will be 1 unit of water, because right value (1), despite being lower, than previous (3), could not withhold any water. 
 
+# Solution
+
+Algorithm could be described as:
+Iterate through array from both ends, next iteration end depends from which "current end" of array is higher. Then, if current value in array is higher than current "hole depth" we move "current end", else, we add gap between "current end" depth and current value in array to final volume.  
+
+Time complexity is O(n) since we iterate through array only once.
+Space Complexity is O(1) since we store a few privitive variables.
+I assume, that this is optimal solution at least in big-O terms, since we cannot find all the holes without going through array at least once.
+
 # Details of implementation
 
 Interaction type application uses is not stated explicitly. I assume, that appropriate way to do it, to create REST service, user can interact with. 
